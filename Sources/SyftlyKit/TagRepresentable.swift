@@ -68,21 +68,3 @@ public extension Tag {
         _ = `class`(classes)
     }
 }
-
-public extension Tag {
-    func gradientBackground() -> Self {
-        `class`(add: "bg-gradient-to-br from-indigo-500 to-cyan-400")
-    }
-    
-    func gradientBackground(_ condition: Bool) -> Self {
-        `class`(add: "bg-gradient-to-br from-indigo-500 to-cyan-400", condition)
-    }
-    
-    func gradientText() -> Self {
-        `class`(add: "bg-gradient-to-br from-indigo-500 to-cyan-400 text-transparent bg-clip-text")
-    }
-    
-    func gradientText(_ condition: Bool) -> Self {
-        `class`(add: "bg-gradient-to-br from-indigo-500 to-cyan-400 text-transparent bg-clip-text", condition)
-    }
-}
