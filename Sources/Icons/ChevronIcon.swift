@@ -8,7 +8,7 @@
 import SwiftSvg
 
 public struct ChevronIcon: HTMLView {
-    enum Direction {
+    public enum Direction {
         case left
         case right
     }
@@ -26,7 +26,7 @@ public struct ChevronIcon: HTMLView {
         }
     }
     
-    var body: Tag {
+    public var body: Tag {
         Svg {
             Path(path)
                 .attribute("fill", "none")

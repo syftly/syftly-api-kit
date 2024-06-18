@@ -6,6 +6,7 @@
 //
 
 import SwiftHtml
+import Foundation
 
 public enum HXTrigger {
     case every([HTMXTriggerModifier] = [])
@@ -44,7 +45,7 @@ public enum HXTrigger {
     }
 }
 
-enum HTMXTriggerModifier {
+public enum HTMXTriggerModifier {
     case once
     /// Only issue a request if the value of the element has changed
     case changed
@@ -64,7 +65,7 @@ enum HTMXTriggerModifier {
     }
 }
 
-extension Tag {
+public extension Tag {
     func hxTrigger(_ trigger: HXTrigger) -> Self {
         attribute("hx-trigger", trigger.value)
     }

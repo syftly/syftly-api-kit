@@ -6,7 +6,6 @@
 //
 
 import SwiftHtml
-import Vapor
 
 public protocol HTMLView {
     @TagBuilder
@@ -38,14 +37,6 @@ public extension HTMLView {
 }
 
 public extension HTMLView {
-//    func `class`(_ values: TailwindCssClass...) -> Tag {
-//        let group = body
-//        assert(group.children.count < 2, "You many only use \(#function) on TagRepresentable objects with one top child")
-//        let topChild = group.children.first
-//        assert(topChild != nil, "There must be a top child to use \(#function) on TagRepresentable objects")
-//        return topChild!.class(add: values)
-//    }
-    
     func `class`(_ values: String...) -> Tag {
         let group = body
         assert(group.children.count < 2, "You many only use \(#function) on TagRepresentable objects with one top child")
@@ -60,40 +51,19 @@ public extension HTMLView {
         let document = Document(.unspecified) { self.body }
         return DocumentRenderer(minify: false, indent: 4).render(document)
     }
-    
-    func render() -> Response {
-        let document = Document(.unspecified) { self.body }
-        let docString = DocumentRenderer(minify: false, indent: 4).render(document)
-        return Response(body: .init(stringLiteral: docString))
-    }
-}
-
-public extension HTMLView {
-    func renderAsDocument(_ selectedPage: SideNavBar.Page) -> String {
-        let webApp = WebApp(content: self.body, selectedPage: selectedPage)
-        let document = Document(.html) { webApp.body }
-        return DocumentRenderer(minify: false, indent: 4).render(document)
-    }
-    
-    func renderAsDocument(_ selectedPage: SideNavBar.Page) -> Response {
-        let webApp = WebApp(content: self.body, selectedPage: selectedPage)
-        let document = Document(.html) { webApp.body }
-        let docString = DocumentRenderer(minify: false, indent: 4).render(document)
-        return Response(body: .init(stringLiteral: docString))
-    }
 }
 
 public extension Tag {
     /// initialize a new Tag with classes
-    public convenience init(_ classes: [String], @TagBuilder builder: () -> Tag) {
+    convenience init(_ classes: [String], @TagBuilder builder: () -> Tag) {
         self.init([builder()])
         _ = `class`(classes)
     }
-    public convenience init(_ classes: String, @TagBuilder builder: () -> Tag) {
+    convenience init(_ classes: String, @TagBuilder builder: () -> Tag) {
         self.init([builder()])
         _ = `class`(classes)
     }
-    public convenience init(_ classes: String) {
+    convenience init(_ classes: String) {
         self.init()
         _ = `class`(classes)
     }
