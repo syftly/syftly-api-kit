@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-extension Tag {
+public extension Tag {
     func primaryButton() -> Self {
         `class`(add: "text-base font-medium text-white rounded-full py-3 px-6 md:py-4 md:px-8 md:min-w-36")
             .gradientBackground()

@@ -8,7 +8,7 @@
 import SwiftHtml
 import SwiftSvg
 
-struct HomeIcon: HTMLView {
+public struct HomeIcon: HTMLView {
     var body: Tag {
         Svg {
             Path("M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212")

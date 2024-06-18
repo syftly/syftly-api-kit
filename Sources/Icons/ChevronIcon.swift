@@ -7,7 +7,7 @@
 
 import SwiftSvg
 
-struct ChevronIcon: HTMLView {
+public struct ChevronIcon: HTMLView {
     enum Direction {
         case left
         case right
@@ -15,7 +15,7 @@ struct ChevronIcon: HTMLView {
     
     let direction: Direction
     
-    init(_ direction: Direction) {
+    public init(_ direction: Direction) {
         self.direction = direction
     }
     

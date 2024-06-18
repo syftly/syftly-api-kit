@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-enum HXTrigger {
+public enum HXTrigger {
     case every([HTMXTriggerModifier] = [])
     case revealed([HTMXTriggerModifier] = [])
     case load([HTMXTriggerModifier] = [])

@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-extension Tag {
+public extension Tag {
     func hxGet(_ url: String) -> Self {
         attribute("hx-get", url)
     }

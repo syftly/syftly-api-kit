@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-enum HXSwap: String {
+public enum HXSwap: String {
     case innerHTML
     case outerHTML
     case afterbegin
@@ -18,7 +18,7 @@ enum HXSwap: String {
     case none
 }
 
-extension Tag {
+public extension Tag {
     func hxSwap(_ swap: HXSwap) -> Self {
         attribute("hx-swap", swap.rawValue)
     }

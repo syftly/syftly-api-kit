@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-extension Tag {
+public extension Tag {
     func hxTarget(_ target: String) -> Self {
         attribute("hx-target", target)
     }

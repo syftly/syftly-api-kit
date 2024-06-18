@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-struct LogoIcon: HTMLView {
+public struct LogoIcon: HTMLView {
     var body: Tag {
         Div { Img(src: "../Images/light-syftlyLogo.png", alt: "Logo").id("Logo") }
     }

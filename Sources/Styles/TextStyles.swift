@@ -7,7 +7,7 @@
 
 import SwiftHtml
 
-enum TextStyleSize: String {
+public enum TextStyleSize: String {
     case base = "text-base"
     case large = "text-lg"
     case xl = "text-xl"
@@ -17,14 +17,14 @@ enum TextStyleSize: String {
     case fiveXL = "text-5xl"
 }
 
-enum TextStyleWeight: String {
+public enum TextStyleWeight: String {
     case normal = "font-normal"
     case medium = "font-medium"
     case semibold = "font-semibold"
     case bold = "font-bold"
 }
 
-extension Tag {
+public extension Tag {
     func primaryText(size: TextStyleSize = .base, weight: TextStyleWeight = .normal) -> Self {
         `class`(add: "\(size.rawValue) \(weight.rawValue) text-[#292846] dark:text-white")
     }
