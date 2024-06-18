@@ -6,13 +6,13 @@ import PackageDescription
 let package = Package(
     name: "syftly-api-kit",
     platforms: [.macOS(.v14)],
-    products: [.library(name: "SyftlyKit", targets: ["syftly-api-kit"])],
+    products: [.library(name: "SyftlyKit", targets: ["SyftlyKit"])],
     dependencies: [
         .package(url: "https://github.com/binarybirds/swift-html", from: "1.7.0")
     ],
     targets: [
         .target(
-            name: "syftly-api-kit",
+            name: "SyftlyKit",
             dependencies: [
                 .product(name: "SwiftHtml", package: "swift-html"),
                 .product(name: "SwiftSvg", package: "swift-html")
