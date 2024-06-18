@@ -1,0 +1,15 @@
+{
+  "originHash" : "d9229242d418e2289f459863169952fa0d0ded044909e387bd9426ddccb0dac5",
+  "pins" : [
+    {
+      "identity" : "swift-html",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/binarybirds/swift-html",
+      "state" : {
+        "revision" : "f4fa5bc83fbee8dbd301c6fbb3969437415adad0",
+        "version" : "1.7.0"
+      }
+    }
+  ],
+  "version" : 3
+}
