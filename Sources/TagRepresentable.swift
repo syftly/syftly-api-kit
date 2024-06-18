@@ -8,12 +8,12 @@
 import SwiftHtml
 import Vapor
 
-protocol HTMLView {
+public protocol HTMLView {
     @TagBuilder
     var body: Tag { get }
 }
 
-extension TagBuilder {
+public extension TagBuilder {
     static func buildExpression(_ expression: String) -> Tag {
         Text(expression)
     }
@@ -27,7 +27,7 @@ extension TagBuilder {
     }
 }
 
-extension HTMLView {
+public extension HTMLView {
     func id(_ id: String) -> Tag {
         let group = body
         assert(group.children.count < 2, "You many only use \(#function) on TagRepresentable objects with one top child")
@@ -37,7 +37,7 @@ extension HTMLView {
     }
 }
 
-extension HTMLView {
+public extension HTMLView {
 //    func `class`(_ values: TailwindCssClass...) -> Tag {
 //        let group = body
 //        assert(group.children.count < 2, "You many only use \(#function) on TagRepresentable objects with one top child")
@@ -55,7 +55,7 @@ extension HTMLView {
     }
 }
 
-extension HTMLView {
+public extension HTMLView {
     func render() -> String {
         let document = Document(.unspecified) { self.body }
         return DocumentRenderer(minify: false, indent: 4).render(document)
@@ -68,7 +68,7 @@ extension HTMLView {
     }
 }
 
-extension HTMLView {
+public extension HTMLView {
     func renderAsDocument(_ selectedPage: SideNavBar.Page) -> String {
         let webApp = WebApp(content: self.body, selectedPage: selectedPage)
         let document = Document(.html) { webApp.body }
@@ -83,7 +83,7 @@ extension HTMLView {
     }
 }
 
-extension Tag {
+public extension Tag {
     /// initialize a new Tag with classes
     public convenience init(_ classes: [String], @TagBuilder builder: () -> Tag) {
         self.init([builder()])
@@ -99,7 +99,7 @@ extension Tag {
     }
 }
 
-extension Tag {
+public extension Tag {
     func gradientBackground() -> Self {
         `class`(add: "bg-gradient-to-br from-indigo-500 to-cyan-400")
     }
