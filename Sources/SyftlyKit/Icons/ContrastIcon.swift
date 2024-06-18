@@ -9,6 +9,8 @@ import SwiftHtml
 import SwiftSvg
 
 public struct ContrastIcon: HTMLView {
+    public init() {}
+    
     public var body: Tag {
         Svg {
             Circle(cx: 256, cy: 256, r: 208)
