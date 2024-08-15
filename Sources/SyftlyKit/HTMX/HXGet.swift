@@ -12,4 +12,3 @@ public extension Tag {
         attribute("hx-get", url)
     }
 }
-
